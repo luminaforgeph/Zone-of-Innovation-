@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F4F4F0" />
+  <meta name="description" content="Zone of Innovation delivers structured IT infrastructure, cloud architecture, cybersecurity and managed IT services for ambitious businesses in Port Harcourt, Nigeria." />
+  <title>Zone of Innovation — Structured IT for Modern Business</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <style>
+    :root {
+      --ink: #111111;
+      --paper: #F4F4F0;
+      --orange: #FF4500;
+      --line: rgba(17,17,17,.14);
+      --muted: #777771;
+      --nav-h: 78px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+    body {
+      margin: 0; background: var(--paper); color: var(--ink);
+      font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    body::after {
+      content: ""; position: fixed; inset: 0; z-index: 80; pointer-events: none; opacity: .12;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    h1,h2,h3,.display { font-family: 'Space Grotesk', sans-serif; }
+    a { color: inherit; text-decoration: none; }
+    button,input,textarea { font: inherit; }
+    ::selection { background: var(--orange); color: var(--paper); }
+    .site-nav { height: var(--nav-h); background: var(--paper); border-bottom: 1px solid var(--line); }
+    .brand { font: 700 15px/1 'Space Grotesk',sans-serif; letter-spacing: -.075em; }
+    .brand-mark { display:inline-grid; place-items:center; width:25px;height:25px;background:var(--orange);color:var(--ink);font-size:14px;margin-right:9px; }
+    .nav-cta { background:var(--ink);color:var(--orange); transition:background .3s,color .3s; }
+    .nav-cta:hover { background:var(--orange);color:var(--ink); }
+    .hero { padding-top: calc(var(--nav-h) + 64px); }
+    .hero-grid { display:grid;grid-template-columns:minmax(0,1.8fr) minmax(260px,1fr);gap:clamp(28px,5vw,76px);align-items:end; }
+    .hero-title { font-size:clamp(3.6rem,8.1vw,8.8rem);line-height:.84;letter-spacing:-.095em;font-weight:600;max-width:1000px; }
+    .hero-title .outline { color:transparent;-webkit-text-stroke:1.5px var(--ink); }
+    .hero-aside { align-self:stretch;display:flex;flex-direction:column;justify-content:space-between;min-height:340px; }
+    .hero-image { width:100%;height:clamp(280px,35vw,490px);object-fit:cover;filter:grayscale(1) contrast(1.12);display:block; }
+    .image-frame { position:relative;overflow:hidden;background:#252525; }
+    .image-frame::after { content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.2);pointer-events:none; }
+    .hero-image { transition:transform .9s cubic-bezier(.2,.7,.2,1); }
+    .image-frame:hover .hero-image { transform:scale(1.035); }
+    .hero-bottom { display:flex;justify-content:space-between;align-items:end;gap:24px;margin-top:42px;padding-bottom:38px;border-bottom:1px solid var(--line); }
+    .eyebrow { font:600 10px/1.3 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase; }
+    .hero-note { max-width:310px;font-size:13px;line-height:1.65;color:#5e5e59; }
+    .scroll-cue { display:flex;align-items:center;gap:12px;font:600 10px 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase; }
+    .scroll-cue i { color:var(--orange);font-size:17px; }
+    .marquee-wrap { overflow:hidden;border-bottom:1px solid var(--line);padding:17px 0; }
+    .marquee-track { display:flex;width:max-content;animation:marquee 30s linear infinite; }
+    .marquee-item { white-space:nowrap;padding-right:32px;font:600 12px 'Space Grotesk',sans-serif;letter-spacing:.11em;text-transform:uppercase; }
+    .marquee-item span { color:var(--orange);padding-left:32px; }
+    @keyframes marquee { to { transform:translateX(-50%); } }
+    .section-shell { padding:clamp(76px,10vw,150px) 0; }
+    .section-kicker { color:#777771;font:600 10px 'Inter',sans-serif;letter-spacing:.16em;text-transform:uppercase; }
+    .section-heading { font-size:clamp(3.4rem,8vw,8rem);line-height:.84;letter-spacing:-.09em;font-weight:600; }
+    .services-intro { display:grid;grid-template-columns:1fr minmax(220px,320px);gap:30px;align-items:end;margin-bottom:64px; }
+    .service-row { display:grid;grid-template-columns:90px minmax(0,1fr) 52px;align-items:center;gap:24px;min-height:116px;padding:20px 26px 20px 0;border-top:1px solid var(--line);position:relative;overflow:hidden;transition:color .35s,padding .35s; }
+    .service-row:last-child { border-bottom:1px solid var(--line); }
+    .service-row::before { content:"";position:absolute;inset:0;background:var(--ink);transform:translateY(101%);transition:transform .42s cubic-bezier(.2,.7,.2,1);z-index:0; }
+    .service-row:hover::before,.service-row:focus-visible::before { transform:translateY(0); }
+    .service-row:hover,.service-row:focus-visible { color:var(--paper);padding-left:18px; }
+    .service-row > * { position:relative;z-index:1; }
+    .service-number { font:500 14px 'Space Grotesk',sans-serif;color:#85857e; }
+    .service-name { font:500 clamp(1.35rem,3vw,2.7rem)/1.08 'Space Grotesk',sans-serif;letter-spacing:-.055em; }
+    .service-arrow { color:var(--orange);font-size:20px;opacity:0;transform:translateX(-14px);transition:all .35s; }
+    .service-row:hover .service-arrow,.service-row:focus-visible .service-arrow { opacity:1;transform:translateX(0); }
+    .service-meta { justify-self:end;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#85857e; }
+    .blueprint { background:var(--ink);color:var(--paper);position:relative;overflow:hidden; }
+    .blueprint::before { content:"";position:absolute;inset:0;opacity:.1;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.13) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.13) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,black,transparent 90%); }
+    .blueprint .section-kicker { color:#9a9a93; }
+    .blueprint-head { display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:62px;position:relative; }
+    .blueprint-head p { max-width:300px;color:#a6a69f;font-size:13px;line-height:1.7; }
+    .steps-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid rgba(244,244,240,.2);border-left:1px solid rgba(244,244,240,.2);position:relative; }
+    .step { min-height:260px;padding:clamp(26px,4vw,56px);border-right:1px solid rgba(244,244,240,.2);border-bottom:1px solid rgba(244,244,240,.2);display:flex;flex-direction:column;justify-content:space-between;transition:background .35s; }
+    .step:hover { background:#1b1b1b; }
+    .step-top { display:flex;justify-content:space-between;align-items:center;color:#96968f;font:500 11px 'Space Grotesk',sans-serif;letter-spacing:.1em; }
+    .step-top i { color:var(--orange);font-size:17px; }
+    .step h3 { font-size:clamp(2rem,4vw,3.6rem);letter-spacing:-.07em;margin:44px 0 12px; }
+    .step p { color:#aaa9a2;font-size:13px;line-height:1.7;max-width:390px;margin:0; }
+    .contact { display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.78fr);gap:clamp(40px,10vw,150px);align-items:start; }
+    .contact-title { font-size:clamp(4.4rem,11vw,11rem);line-height:.78;letter-spacing:-.105em;font-weight:600; }
+    .contact-title span { color:var(--orange); }
+    .contact-copy { max-width:340px;margin-top:42px;color:#686862;font-size:13px;line-height:1.75; }
+    .contact-form { padding-top:10px; }
+    .field { display:block;width:100%;background:transparent;border:0;border-bottom:1px solid #aaa9a2;border-radius:0;padding:19px 0 15px;outline:none;color:var(--ink);font-size:14px;transition:border-color .25s; }
+    .field:focus { border-color:var(--orange); }
+    .field::placeholder { color:#85857e; }
+    .field-label { display:block;margin-top:24px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#777771; }
+    textarea.field { min-height:105px;resize:vertical; }
+    .submit-btn { width:100%;margin-top:34px;background:var(--orange);color:var(--ink);padding:19px 22px;border:1px solid var(--orange);display:flex;justify-content:space-between;align-items:center;font:600 12px 'Inter',sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:background .3s,color .3s,border-color .3s; }
+    .submit-btn:hover { background:var(--ink);color:var(--orange);border-color:var(--ink); }
+    .form-status { min-height:22px;margin-top:14px;font-size:12px;color:#5c5c55;line-height:1.5; }
+    .footer { background:var(--ink);color:var(--paper);padding:36px 0; }
+    .footer-grid { display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:center; }
+    .footer-note { color:#a2a29b;font-size:11px; }
+    .footer-center { text-align:center;font-size:11px;color:#a2a29b; }
+    .footer-center strong { color:var(--paper);font-weight:500; }
+    .socials { display:flex;justify-content:flex-end;gap:22px; }
+    .socials a { color:#a2a29b;transition:color .2s; }
+    .socials a:hover { color:var(--orange); }
+    .preloader { position:fixed;inset:0;background:var(--ink);color:var(--paper);z-index:200;display:flex;align-items:center;justify-content:center;transition:opacity .65s ease,visibility .65s ease; }
+    .preloader.is-hidden { opacity:0;visibility:hidden; }
+    .loader-word { font:600 clamp(1.3rem,4vw,3rem) 'Space Grotesk',sans-serif;letter-spacing:-.08em; }
+    .loader-word span { color:var(--orange); }
+    .reveal { opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1); }
+    .reveal.is-visible { opacity:1;transform:translateY(0); }
+    .mobile-menu { display:none; }
+    @media (max-width: 800px) {
+      :root { --nav-h:68px; }
+      .hero { padding-top:calc(var(--nav-h) + 42px); }
+      .hero-grid { grid-template-columns:1fr;gap:32px; }
+      .hero-title { font-size:clamp(3.5rem,13.5vw,7rem); }
+      .hero-aside { min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:end; }
+      .hero-image { height:clamp(220px,58vw,380px); }
+      .hero-bottom { margin-top:30px; }
+      .services-intro { grid-template-columns:1fr;gap:20px;margin-bottom:42px; }
+      .blueprint-head { display:block; }
+      .blueprint-head p { margin-top:28px; }
+      .contact { grid-template-columns:1fr;gap:60px; }
+      .contact-copy { margin-top:28px; }
+      .footer-grid { grid-template-columns:1fr 1fr; }
+      .footer-center { text-align:right; }
+      .socials { grid-column:1/-1;justify-content:flex-start;padding-top:8px; }
+    }
+    @media (max-width: 560px) {
+      .container-pad { padding-left:20px;padding-right:20px; }
+      .brand { font-size:13px; }
+      .desktop-nav { display:none; }
+      .mobile-menu { display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line); }
+      .mobile-panel { display:none;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);padding:18px 20px 24px; }
+      .mobile-panel.open { display:grid;gap:18px; }
+      .hero-title { font-size:clamp(3.15rem,14.3vw,5.4rem); }
+      .hero-aside { grid-template-columns:1fr; }
+      .hero-aside .hero-note { max-width:270px; }
+      .hero-image { height:260px; }
+      .hero-bottom { align-items:flex-start;flex-direction:column; }
+      .scroll-cue { align-self:flex-end; }
+      .service-row { grid-template-columns:42px minmax(0,1fr) 24px;gap:12px;min-height:94px;padding-right:8px; }
+      .service-row:hover,.service-row:focus-visible { padding-left:10px; }
+      .service-name { font-size:clamp(1.12rem,5vw,1.55rem); }
+      .service-meta { display:none; }
+      .steps-grid { grid-template-columns:1fr; }
+      .step { min-height:220px;padding:28px; }
+      .contact-title { font-size:clamp(4.3rem,19vw,7rem); }
+      .footer-grid { grid-template-columns:1fr;gap:18px; }
+      .footer-center { text-align:left; }
+      .socials { grid-column:auto;padding-top:0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,*::before,*::after { scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important; }
+      .reveal { opacity:1;transform:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="preloader" id="preloader" aria-label="Loading">
+    <div class="loader-word">ZONE<span>.</span> / INNOVATION</div>
+  </div>
+
+  <header class="site-nav fixed top-0 left-0 right-0 z-50">
+    <div class="container-pad max-w-[1600px] mx-auto h-full px-8 flex items-center justify-between relative">
+      <a href="#top" class="brand flex items-center" aria-label="Zone of Innovation home">
+        <span class="brand-mark">Z</span> ZONE OF INNOVATION
+      </a>
+      <nav class="desktop-nav flex items-center gap-9 text-[10px] font-semibold uppercase tracking-[.13em]" aria-label="Main navigation">
+        <a class="hover:text-[#FF4500] transition-colors" href="#services">Capabilities</a>
+        <a class="hover:text-[#FF4500] transition-colors" href="#approach">Approach</a>
+        <a class="hover:text-[#FF4500] transition-colors" href="#contact">Contact</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="nav-cta hidden sm:inline-flex items-center gap-5 px-5 py-3 text-[10px] font-bold uppercase tracking-[.1em]">Start a Project <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+        <button class="mobile-menu" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      </div>
+      <nav class="mobile-panel" id="mobile-panel" aria-label="Mobile navigation">
+        <a href="#services">Capabilities <i class="fa-solid fa-arrow-right float-right text-[#FF4500]"></i></a>
+        <a href="#approach">Approach <i class="fa-solid fa-arrow-right float-right text-[#FF4500]"></i></a>
+        <a href="#contact">Start a Project <i class="fa-solid fa-arrow-right float-right text-[#FF4500]"></i></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container-pad max-w-[1600px] mx-auto px-8">
+      <div class="hero-grid">
+        <div class="reveal">
+          <p class="eyebrow mb-8"><span class="text-[#FF4500]">●</span> Independent IT systems partner / Port Harcourt, NG</p>
+          <h1 class="hero-title uppercase">Structured<br>IT solutions<br>for <span class="outline">modern</span><br>business.</h1>
+        </div>
+        <div class="hero-aside reveal">
+          <div class="flex justify-between items-start gap-5 mb-6">
+            <p class="hero-note">We design, secure and manage the technology that keeps ambitious businesses moving.</p>
+            <span class="eyebrow text-right shrink-0">01 — 04<br>Systems first</span>
+          </div>
+          <div class="image-frame">
+            <img class="hero-image" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="High-density server infrastructure in a modern data centre" fetchpriority="high">
+          </div>
+        </div>
+      </div>
+      <div class="hero-bottom reveal">
+        <p class="hero-note">From resilient infrastructure to intelligent cloud environments, we turn complex IT into a dependable business advantage.</p>
+        <a href="#services" class="scroll-cue">Explore capabilities <i class="fa-solid fa-arrow-down-long"></i></a>
+      </div>
+    </section>
+
+    <div class="marquee-wrap" aria-label="Our services">
+      <div class="marquee-track" id="marquee-track">
+        <div class="marquee-item">IT Infrastructure <span>✳</span> Cloud Architecture <span>✳</span> Cybersecurity <span>✳</span> Managed IT <span>✳</span></div>
+        <div class="marquee-item" aria-hidden="true">IT Infrastructure <span>✳</span> Cloud Architecture <span>✳</span> Cybersecurity <span>✳</span> Managed IT <span>✳</span></div>
+      </div>
+    </div>
+
+    <section class="section-shell container-pad max-w-[1600px] mx-auto px-8" id="services">
+      <div class="services-intro reveal">
+        <div>
+          <p class="section-kicker mb-7">01 / What we do</p>
+          <h2 class="section-heading uppercase">Capabilities<span class="text-[#FF4500]">.</span></h2>
+        </div>
+        <p class="text-[13px] leading-[1.8] text-[#686862] max-w-[310px]">A connected set of technical disciplines, engineered around the way your organisation actually works.</p>
+      </div>
+
+      <div class="service-list reveal">
+        <a href="#contact" class="service-row group">
+          <span class="service-number">01</span>
+          <span class="service-name">IT Infrastructure &amp; Networking</span>
+          <span class="service-meta">Connect / Scale</span>
+          <i class="service-arrow fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a href="#contact" class="service-row group">
+          <span class="service-number">02</span>
+          <span class="service-name">Cloud Architecture &amp; Migration</span>
+          <span class="service-meta">Modernise / Move</span>
+          <i class="service-arrow fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a href="#contact" class="service-row group">
+          <span class="service-number">03</span>
+          <span class="service-name">Cybersecurity &amp; Compliance</span>
+          <span class="service-meta">Protect / Assure</span>
+          <i class="service-arrow fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+        <a href="#contact" class="service-row group">
+          <span class="service-number">04</span>
+          <span class="service-name">Managed IT Support</span>
+          <span class="service-meta">Maintain / Improve</span>
+          <i class="service-arrow fa-solid fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+
+    <section class="blueprint section-shell" id="approach">
+      <div class="container-pad max-w-[1600px] mx-auto px-8">
+        <div class="blueprint-head reveal">
+          <div>
+            <p class="section-kicker mb-7">02 / How we work</p>
+            <h2 class="section-heading uppercase">The<br>blueprint<span class="text-[#FF4500]">.</span></h2>
+          </div>
+          <p>Good technology is intentional. Our delivery process brings clarity to complexity, with every decision tied to performance, resilience and measurable outcomes.</p>
+        </div>
+
+        <div class="steps-grid reveal">
+          <article class="step">
+            <div class="step-top"><span>01 — ANALYSIS</span><i class="fa-solid fa-crosshairs"></i></div>
+            <div><h3>Understand the system.</h3><p>We map your environment, identify operational friction and establish the technical requirements that matter.</p></div>
+          </article>
+          <article class="step">
+            <div class="step-top"><span>02 — ARCHITECTURE</span><i class="fa-solid fa-diagram-project"></i></div>
+            <div><h3>Design with intent.</h3><p>We define a secure, scalable architecture with clear dependencies, sensible standards and a practical path forward.</p></div>
+          </article>
+          <article class="step">
+            <div class="step-top"><span>03 — IMPLEMENTATION</span><i class="fa-solid fa-terminal"></i></div>
+            <div><h3>Build for reliability.</h3><p>We deploy, configure and integrate each component, validating performance and security at every stage.</p></div>
+          </article>
+          <article class="step">
+            <div class="step-top"><span>04 — OPTIMIZATION</span><i class="fa-solid fa-chart-line"></i></div>
+            <div><h3>Keep improving.</h3><p>We monitor, maintain and refine your environment so it stays aligned with evolving business demands.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-shell container-pad max-w-[1600px] mx-auto px-8" id="contact">
+      <div class="contact">
+        <div class="reveal">
+          <p class="section-kicker mb-8">03 / Your next move</p>
+          <h2 class="contact-title uppercase">Let's<br>build<span>.</span></h2>
+          <p class="contact-copy">Have a system to strengthen, a cloud journey to plan or a technology challenge to solve? Tell us what you're working on.</p>
+        </div>
+        <form class="contact-form reveal" id="project-form">
+          <p class="eyebrow mb-5">Start a conversation</p>
+          <label class="field-label" for="name">Your name</label>
+          <input class="field" id="name" name="name" type="text" placeholder="Name" autocomplete="name" required>
+          <label class="field-label" for="email">Work email</label>
+          <input class="field" id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+          <label class="field-label" for="service">What do you need?</label>
+          <select class="field" id="service" name="service" required>
+            <option value="" disabled selected>Select a capability</option>
+            <option>IT Infrastructure &amp; Networking</option>
+            <option>Cloud Architecture &amp; Migration</option>
+            <option>Cybersecurity &amp; Compliance</option>
+            <option>Managed IT Support</option>
+            <option>Something else</option>
+          </select>
+          <label class="field-label" for="message">A little about the project</label>
+          <textarea class="field" id="message" name="message" placeholder="Tell us what you're looking to achieve..." required></textarea>
+          <button class="submit-btn" type="submit"><span>Send project enquiry</span><i class="fa-solid fa-arrow-right"></i></button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite">This demo form is front-end only. Connect an email or form endpoint to receive submissions.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container-pad max-w-[1600px] mx-auto px-8">
+      <div class="footer-grid">
+        <div class="footer-note">© <span id="year"></span> ZONE OF INNOVATION</div>
+        <div class="footer-center">Built by <strong>Lumina Forge</strong></div>
+        <div class="socials" aria-label="Social links">
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="mailto:hello@zoneofinnovation.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Remove the loading screen after the page's assets have loaded.
+    window.addEventListener('load', () => {
+      const preloader = document.getElementById('preloader');
+      window.setTimeout(() => preloader.classList.add('is-hidden'), 250);
+    });
+
+    // Keep anchor navigation smooth, including browsers that ignore CSS scroll behavior.
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        document.getElementById('mobile-panel')?.classList.remove('open');
+        document.getElementById('menu-toggle')?.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Build a seamless marquee track from the original message.
+    const marquee = document.getElementById('marquee-track');
+    if (marquee) {
+      const original = marquee.querySelector('.marquee-item');
+      if (original) {
+        marquee.innerHTML = '';
+        for (let i = 0; i < 4; i += 1) {
+          const item = original.cloneNode(true);
+          item.setAttribute('aria-hidden', i > 0 ? 'true' : 'false');
+          marquee.appendChild(item);
+        }
+      }
+    }
+
+    // Mobile navigation.
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobilePanel = document.getElementById('mobile-panel');
+    menuToggle?.addEventListener('click', () => {
+      const isOpen = mobilePanel.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      menuToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    // Subtle entrance motion as sections enter the viewport.
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+
+    // Front-end demo behavior: validate, acknowledge, and reset without a page reload.
+    document.getElementById('project-form')?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const status = document.getElementById('form-status');
+      if (!form.reportValidity()) return;
+      status.textContent = 'Thank you — your enquiry has been prepared. This demo is not connected to an inbox yet.';
+      form.reset();
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
