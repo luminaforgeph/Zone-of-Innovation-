@@ -163,6 +163,118 @@
       *,*::before,*::after { scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important; }
       .reveal { opacity:1;transform:none; }
     }
+
+    /* Mobile-first layout refinements: keep every navigation item reachable. */
+    .site-nav .container-pad {
+      width: 100%;
+      padding-left: clamp(16px, 4vw, 32px);
+      padding-right: clamp(16px, 4vw, 32px);
+      gap: 12px;
+    }
+    .brand {
+      min-width: 0;
+      white-space: nowrap;
+      font-size: clamp(11px, 2.8vw, 15px);
+      letter-spacing: -.06em;
+    }
+    .brand-mark { flex: 0 0 25px; }
+    .desktop-nav { display: none !important; }
+    .site-nav .nav-cta { display: none !important; }
+    .mobile-menu {
+      display: inline-flex !important;
+      flex: 0 0 40px;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+    }
+    .mobile-panel {
+      display: none;
+      position: absolute;
+      top: var(--nav-h);
+      left: 0;
+      right: 0;
+      width: 100%;
+      padding: 10px clamp(16px, 4vw, 32px) 24px;
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 16px 24px rgba(17,17,17,.08);
+      z-index: 60;
+    }
+    .mobile-panel.open { display: grid; gap: 0; }
+    .mobile-panel a {
+      display: block;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .mobile-panel a:last-child { border-bottom: 0; }
+    .hero, .section-shell, .blueprint > .container-pad, .footer > .container-pad {
+      padding-left: clamp(16px, 5vw, 32px);
+      padding-right: clamp(16px, 5vw, 32px);
+    }
+    .hero-grid, .services-intro, .contact { grid-template-columns: minmax(0, 1fr); }
+    .hero-aside { min-height: 0; display: grid; grid-template-columns: minmax(0,1fr); gap: 20px; }
+    .hero-aside > .flex { margin-bottom: 0; }
+    .hero-image { height: clamp(220px, 58vw, 380px); }
+    .hero-bottom { align-items: flex-start; flex-direction: column; }
+    .scroll-cue { align-self: flex-end; }
+    .services-intro { gap: 20px; margin-bottom: 38px; }
+    .service-row {
+      grid-template-columns: 34px minmax(0,1fr) 22px;
+      gap: 10px;
+      min-height: 88px;
+      padding: 17px 4px 17px 0;
+    }
+    .service-meta { display: none; }
+    .service-name {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      font-size: clamp(1.12rem, 4.8vw, 1.65rem);
+    }
+    .service-arrow { opacity: 1; transform: none; font-size: 16px; }
+    .steps-grid { grid-template-columns: minmax(0,1fr); }
+    .step { min-height: 210px; padding: clamp(24px, 6vw, 34px); }
+    .step h3 { font-size: clamp(1.8rem, 7vw, 2.7rem); }
+    .contact { gap: 42px; }
+    .contact-title { font-size: clamp(4rem, 18vw, 7rem); }
+    .contact-form { min-width: 0; }
+    .field { min-width: 0; }
+    .submit-btn { gap: 16px; padding: 17px; }
+    .footer-grid { grid-template-columns: minmax(0,1fr); gap: 16px; }
+    .footer-center { text-align: left; }
+    .socials { grid-column: auto; justify-content: flex-start; padding-top: 0; }
+    @media (min-width: 760px) {
+      .hero-grid { grid-template-columns: minmax(0,1.8fr) minmax(240px,1fr); }
+      .hero-aside { display: flex; min-height: 300px; }
+      .hero-bottom { flex-direction: row; align-items: flex-end; }
+      .services-intro { grid-template-columns: minmax(0,1fr) minmax(220px,320px); }
+      .steps-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .contact { grid-template-columns: minmax(0,1fr) minmax(300px,.85fr); gap: 48px; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .footer-center { text-align: center; }
+      .socials { justify-content: flex-end; }
+    }
+    @media (min-width: 900px) {
+      .desktop-nav { display: flex !important; }
+      .site-nav .nav-cta { display: inline-flex !important; }
+      .mobile-menu, .mobile-panel { display: none !important; }
+      .site-nav .container-pad { gap: 20px; }
+    }
+    @media (max-width: 380px) {
+      .brand { font-size: 10px; }
+      .brand-mark { width: 22px; height: 22px; flex-basis: 22px; margin-right: 7px; }
+      .hero-title { font-size: clamp(2.8rem, 14vw, 3.4rem); }
+      .section-heading { font-size: clamp(2.9rem, 13vw, 3.5rem); }
+      .service-row { grid-template-columns: 28px minmax(0,1fr) 18px; gap: 8px; }
+    }
+
   </style>
 </head>
 
